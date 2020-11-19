@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="abfc36aa-de85-408d-b1f6-de810eef564c" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="saiFlow" doc:id="5e81869b-fc58-4682-a2b3-d4d829654425" >
+		<http:listener doc:name="Listener" doc:id="26acac18-5f99-4292-94d5-4fc1a6ffc5a8" config-ref="HTTP_Listener_config" path="sai"/>
+		<logger level="INFO" doc:name="Logger" doc:id="191065fb-58f8-47c8-9d64-24ba273c8cf5" />
+	</flow>
+</mule>
